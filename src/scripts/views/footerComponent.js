@@ -5,8 +5,8 @@ import Backbone from 'backbone'
 var FooterComponent = React.createClass({
 	render: function() {
 		return (
-			<footer id = "footerFooter" className="footer sticky-bottom navbar navbar-light mt-1 mr-3 bg-faded navbar-toggleable-md">
-				<ul id = "footerUl" className="navbar-nav mx-2 mr-auto">
+			<footer id = "footerFooter" className="footer sticky-bottom navbar navbar-light bg-faded navbar-toggleable-md">
+				<ul id = "footerUl" className="navbar-nav">
 					<li className = "nav-item mx-2">
 						<a href="#home" className="nav-link">Home</a>
 					</li>

@@ -4,31 +4,36 @@ ALWAYS INCLUDE
 
 /*// FOR REFERENCE
 
-// Military gold #F3CF45
-// red #e63946
-// pearl #f1faee
-// teal #a8dadc
-// sky blue #457b9d
-// royal blue #1d3557
+------USE THESE--------
+// white #fff
+// army gold #FFD530
+// old glory red #BB133E
+// old glory blue #002664
+// light camo #BFB8AB
+// dark camo #333C33
+// medium camo #83847A
+------------------------
 
 // font-family: 'Exo 2', sans-serif;
 // font-family: 'PT Sans', sans-serif;
 // font-family: 'Raleway', sans-serif;*/
 /* 
-
 /*
-#2b2d42
-
-#8d99ae
-
-#edf2f4
-
-#ef233c
-
-#d90429
 */
+*{
+--army-gold: #FFD530;
+--glory-red: #BB133E;
+--glory-blue: #002664;
+--light-camo: #BFB8AB;
+--dark-camo: #333C33;
+--medium-camo: #83847A;
+--some-white: #fff;
+}
 
 /*----------- HEADER -----------------------------*/
+#header div{
+	background: var(--dark-camo);
+}
 .logo{
 	width:20em;
 	padding: 2em;
@@ -36,24 +41,21 @@ ALWAYS INCLUDE
 
 /*------------- BODY -----------------------------*/
 .container div{
-	background: #8d99ae;
+	background: var(--medium-camo);
+	margin: 0;
+	padding: .4em;
 
 }
 
-/*------------- NAVBAR ---------------------------*/
-.navBarComponent a{
-	font-family: 'Exo 2', sans-serif;
-	background: none;
-}
-
-.navBarComponent a:hover{
+.navBarComponent a: hover{
 
 	border-bottom: .1em dashed #F3CF45;
 }
 
 .headerComponent{
+
 	font-family: 'Exo 2', sans-serif;
-	background: none;
+	background: var(--light-camo);
 }
 
 /*------------ JOINED GROUPS MODULE --------------*/
@@ -95,51 +97,63 @@ ALWAYS INCLUDE
 /*----------- ABOUT SECTION ON HOMEPAGE -------*/
 
 /*---------- registration and login -----------*/
-
+#login{
+	background: rgba(1,1,1,0);
+	color: var(--dark-camo);
+}
+#signup{
+	background: rgba(1,1,1,0);
+	color: var(--dark-camo);
+}
 .loginComponent h3{
 
 	font-family: 'Exo 2', sans-serif;
+	color: var(--dark-camo);
 
 }
 
 .loginComponent{
-
-	border-left: .1em solid #F3CF45;
+	color: var(--dark-camo);
+	border-left: .1em solid var(--dark-camo);
 
 }
 
 
 #loginLabel{
-	color: white;
+
+	color: var(--dark-camo);
 	font-family: 'Exo 2', sans-serif;
 
 }
 
 #registerLabel{
-	color: white;
+	color: var(--dark-camo);
 	font-family: 'Exo 2', sans-serif;
 
 }
 
 #loginForm input{
-	border: .1em solid #F3CF45;
+	border: .1em solid var(--dark-camo);
 	background: none;
-	color: white;
+	color: var(--dark-camo);
 	font-family: 'PT Sans', sans-serif;
 
 }
-#registerH3 {
+
+#registerH3 h3{
 	font-family: 'Exo 2', sans-serif;
+	color: var(--dark-camo);
 }
+
 #loginH3 {
 	font-family: 'Exo 2', sans-serif;
+	color: var(--dark-camo);
 }
 
-
 #registerForm input{
-	border: .1em solid #F3CF45;
+	border: .1em solid var(--dark-camo);
 	background: none;
-	color: white;
+	color: var(--dark-camo);
 	font-family: 'PT Sans', sans-serif;
 }
 
@@ -157,23 +171,24 @@ ALWAYS INCLUDE
 	margin: auto;
 }
 
-.auth-container div{
-	background: #2b2d42;
-	color: white;
+.auth-container{
+	color: black;
+}
+
+div{
+	background: black;
 }
 
 
 /*------------ FOOTER -------------------------*/
-#footerUl{
-	width: 100em;
-	margin: auto;
-	text-align: center;
-	background: none;
-}
+
 #footerFooter{
+	/*background: var(--light-camo);*/
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 	margin: auto;
-	background: none;
-	text-align: center;
 }
 
 #groupJoin {

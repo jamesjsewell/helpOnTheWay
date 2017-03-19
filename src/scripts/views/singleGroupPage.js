@@ -59,6 +59,6 @@ const Message = React.createClass({
 			</div>
 	 	)
  	}
-})
+});
 	
 export default SingleGroupPage

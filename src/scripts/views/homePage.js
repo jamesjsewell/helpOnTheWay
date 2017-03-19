@@ -32,7 +32,7 @@ const HomePage = React.createClass({
 	render: function() {
 		
 		return (
-			<div className="container-fluid">
+			<div className="container" id="content">
 				<HeaderComponent />
 				<div className="auth-container  row">
 					<SignUpComponent loggedIn = {STORE.data.loggedIn}/>

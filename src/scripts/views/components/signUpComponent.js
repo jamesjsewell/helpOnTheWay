@@ -17,7 +17,7 @@ var SignUpComponent = React.createClass({
 		if(this.props.loggedIn === false || this.props.loggedIn === undefined){
 			console.log('rendering sign in')
 			return(
-				<div className = "SignUpComponent col-sm-5 offset-sm-1 p-4">
+				<div id = "signup" className = "SignUpComponent col-sm-5 offset-sm-1 p-4">
 					<form id = "registerForm" onSubmit={this._createAction}>
 						<h3 id="registerH3">Register:</h3>
 						<label id="registerLabel">Email Address</label>

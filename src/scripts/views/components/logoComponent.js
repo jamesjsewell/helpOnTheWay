@@ -6,7 +6,7 @@ import Backbone from 'backbone'
 var LogoComponent = React.createClass({
 
 	render: function(){
-		return <div><img className = 'logo' src='/images/howLogoV2.png' /></div>
+		return <div><img className = 'logo' src='/images/howLogoV3.png' /></div>
 
 	}
 

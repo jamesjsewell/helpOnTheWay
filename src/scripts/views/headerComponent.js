@@ -22,17 +22,17 @@ var HeaderComponent = React.createClass({
 	//button and the hash route link of the button.
 	render: function() {
 		return (
-			<div>
-			<LogoComponent />
-			<nav className="headerComponent navbar navbar-light bg-faded navbar-toggleable-md">
-				<NavBarComponent navButtons = {{
-					"button1": {"name": "Home", "link": "#home"},
-					"button2": {"name": "Groups", "link": "#allgroups"},
-					"button3": {"name": "Create Group", "link": "#registergroup"},
-					"button4": {"name": ACTIONS.loginOrLogoutNav(), "link": "#"+ACTIONS.loginOrLogoutNav()}
-				}}/>
-				<div>{this.getUserName()}</div>
-			</nav>
+			<div className = "headerContainer" id="header">
+				<LogoComponent />
+				<nav className="headerComponent navbar navbar-light bg-faded navbar-toggleable-md">
+					<NavBarComponent navButtons = {{
+						"button1": {"name": "Home", "link": "#home"},
+						"button2": {"name": "Groups", "link": "#allgroups"},
+						"button3": {"name": "Create Group", "link": "#registergroup"},
+						"button4": {"name": ACTIONS.loginOrLogoutNav(), "link": "#"+ACTIONS.loginOrLogoutNav()}
+					}}/>
+					<h4>{this.getUserName()}</h4>
+				</nav>
 			</div>
 		)
 	}
