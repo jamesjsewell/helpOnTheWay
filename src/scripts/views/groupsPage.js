@@ -65,6 +65,18 @@ const Group = React.createClass({
 
 		let userID = ACTIONS.getCurrentIDUser()
 		var addUser = ACTIONS.addUserToGroup(userID,groupID,this.props.groups)
+
+		console.log(this.props.groups)
+		var groupModels = this.props.groups.models
+		var groupName = ""
+		for(var i = 0; i < groupModels.length; i++){
+			console.log(groupModels[i])
+			if(groupModels[i].attributes._id === groupID){
+				groupName = groupModels[i].attributes.name
+				STORE._set({currentGroup: {name: groupName}})
+			}
+		}
+
 		location.hash=`group/${groupID}`
 		
 	},

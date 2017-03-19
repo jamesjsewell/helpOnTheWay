@@ -11,7 +11,8 @@ const STORE = _.extend( Backbone.Events, {
         messageCollection: new MessageCollection(),
         loggedIn: false,
         flare:false,
-        userGroups:{}
+        userGroups:{},
+        currentGroup:{"name": ""}
     },
 
     _broadcastChange: function() {

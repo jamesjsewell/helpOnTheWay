@@ -9,8 +9,9 @@ import STORE from '../../scripts/store'
 //import SingleMessage from './groupViews/groupComponents/messagesComponent.js'
 
 const SingleGroupPage = React.createClass({
-	componentWillMount: function(){
 
+	componentWillMount: function(){
+		//STORE._set({"currentGroup":ACTIONS.getgroupCollection(this.props.groupID)})
 		ACTIONS.getMessagesByGroup(this.props.groupID)
 		STORE.on('updateContent', () => {
 			this.setState(STORE.data)
@@ -21,10 +22,11 @@ const SingleGroupPage = React.createClass({
 		return STORE.data
 	},
 	render: function (){
-
+		console.log(STORE.data.currentGroup.name)
 		return(
 			<div>
 				<HeaderComponent />
+				<h3>{STORE.data.currentGroup.name}</h3>
 				<MessageTextComponent flare={this.state.flare} groupID = {this.props.groupID} />
 				<Messages messages={this.state.messageCollection} />
 				<FooterComponent />

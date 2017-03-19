@@ -182,7 +182,7 @@ let ACTIONS = {
             }
 
             else{
-
+                STORE._set({"currentGroup":this.getgroupCollection()})
                 console.log('user already in group')
                 return('inGroup')
             }
@@ -192,8 +192,9 @@ let ACTIONS = {
     },
 
     //returns collection of data for current group
-    getgroupCollection:function(){
+    getgroupCollection: function(){
 
+         // return STORE.data.groupCollection.fetch()
          return STORE.data.groupCollection.fetch()
 
     },
@@ -206,6 +207,8 @@ let ACTIONS = {
             data: {"groupID": `${groupID}`}
 
         })
+
+
 
     },
 
