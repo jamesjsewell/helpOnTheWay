@@ -34,6 +34,7 @@ ALWAYS INCLUDE
 #header div{
 	background: var(--dark-camo);
 }
+
 .logo{
 	width:20em;
 	padding: 2em;
@@ -121,7 +122,7 @@ ALWAYS INCLUDE
 
 #loginLabel{
 
-	color: var(--dark-camo);
+	color: blue;
 	font-family: 'Exo 2', sans-serif;
 
 }
@@ -172,12 +173,9 @@ ALWAYS INCLUDE
 }
 
 .auth-container{
-	color: black;
+
 }
 
-div{
-	background: black;
-}
 
 
 /*------------ FOOTER -------------------------*/
