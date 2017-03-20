@@ -49,7 +49,7 @@ const SingleGroupPage = React.createClass({
 	},
 
 	getInitialState: function() {
-
+		STORE._set({currentGroup: {name: "", description: "", purpose: "", users: ""}})
 		return STORE.data
 
 	},

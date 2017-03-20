@@ -203,20 +203,43 @@ let ACTIONS = {
     setCurrentSingleGroup: function(groupID){
         //User.getUsersGroups()
         //User.getCurrentUser()
-        var groupColl = this.getgroupCollection()
-        var groupModels = STORE.data.groupCollection.models
-        console.log(STORE.data.groupCollection.models)
-        for(var i = 0; i < groupModels.length; i++){
-            console.log(groupModels[i])
-            console.log(groupModels[i].attributes._id)
-            if(groupModels[i].attributes._id === groupID){
-                var groupName = groupModels[i].attributes.name
-                var groupDescription = groupModels[i].attributes.description
-                var groupPurpose = groupModels[i].attributes.purpose
-                var groupUsers = groupModels[i].attributes.members.length
-                STORE._set({currentGroup: {name: groupName, description: groupDescription, purpose: groupPurpose, users: groupUsers}})
+        // var groupColl = this.getgroupCollection()
+        // var groupModels = STORE.data.groupCollection.models
+        // console.log(STORE.data.groupCollection.models)
+        // for(var i = 0; i < groupModels.length; i++){
+        //     console.log(groupModels[i])
+        //     console.log(groupModels[i].attributes._id)
+        //     if(groupModels[i].attributes._id === groupID){
+        //         var groupName = groupModels[i].attributes.name
+        //         var groupDescription = groupModels[i].attributes.description
+        //         var groupPurpose = groupModels[i].attributes.purpose
+        //         var groupUsers = groupModels[i].attributes.members.length
+        //         STORE._set({currentGroup: {name: groupName, description: groupDescription, purpose: groupPurpose, users: groupUsers}})
+        //     }
+        // }
+
+        var getGroup = this.returnGroup(groupID)
+
+        getGroup.then(
+
+        (groupInfo) => {
+   
+        STORE._set({'groupInfo': groupInfo})
+        console.log(groupInfo)
+        for(var i = 0; i < groupInfo.length; i++){
+            console.log(groupInfo[i].name)
+            if(groupInfo[i]._id === groupID){
+                STORE._set({currentGroup: {name: groupInfo[i].name, description: groupInfo[i].description, purpose: groupInfo[i].purpose, users: groupInfo[i].members.length}})
             }
         }
+        
+        }, 
+
+        (err) => {
+
+        console.log('did not retrieve data',err)
+
+        })
     },
 
     //returns all of the messages for a given group, takes group id
