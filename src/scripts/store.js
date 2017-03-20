@@ -12,7 +12,8 @@ const STORE = _.extend( Backbone.Events, {
         loggedIn: false,
         flare:false,
         userGroups:{},
-        currentGroup:{"name": ""}
+        currentGroup:{"name": "", "description": "", "purpose": "", "users": ""},
+        groupInfo: {}
     },
 
     _broadcastChange: function() {
@@ -24,6 +25,7 @@ const STORE = _.extend( Backbone.Events, {
         this.data.groupModel.on('sync update', this._broadcastChange.bind(this)),
         this.data.messageModel.on('sync update', this._broadcastChange.bind(this)),
         this.data.messageCollection.on('sync update', this._broadcastChange.bind(this))
+      
     },
 
     _set: function(attrs) {

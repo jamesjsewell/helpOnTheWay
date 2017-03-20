@@ -30,7 +30,6 @@ ALWAYS INCLUDE
 --some-white: #fff;
 }
 
-/*----------- HEADER -----------------------------*/
 #header div{
 	background: var(--dark-camo);
 }
@@ -40,8 +39,8 @@ ALWAYS INCLUDE
 	padding: 2em;
 }
 
-/*------------- BODY -----------------------------*/
-.container div{
+
+.container{
 	background: var(--medium-camo);
 	margin: 0;
 	padding: .4em;
@@ -50,7 +49,7 @@ ALWAYS INCLUDE
 
 .navBarComponent a: hover{
 
-	border-bottom: .1em dashed #F3CF45;
+	border-bottom: .1em dashed var(--army-gold);
 }
 
 .headerComponent{
@@ -174,6 +173,12 @@ ALWAYS INCLUDE
 
 .auth-container{
 
+}
+
+/*-------------- SINGLE GROUP PAGE ------------*/
+
+#singleGroupInfo{
+	text-align: center;
 }
 
 

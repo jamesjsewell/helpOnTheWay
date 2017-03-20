@@ -176,13 +176,14 @@ let ACTIONS = {
                     method: 'PUT',
                     type: 'json',
                     url: `api/groups/${groupID}/users/${userID}`},
-                    User.getUsersGroups(), User.getCurrentUser(), 
                     STORE._set({"groupCollection":groupColl}))
             
             }
 
             else{
-                STORE._set({"currentGroup":this.getgroupCollection()})
+                //STORE._set({"currentGroup":this.getgroupCollection()})
+                User.getUsersGroups()
+                User.getCurrentUser()
                 console.log('user already in group')
                 return('inGroup')
             }
@@ -197,6 +198,25 @@ let ACTIONS = {
          // return STORE.data.groupCollection.fetch()
          return STORE.data.groupCollection.fetch()
 
+    },
+
+    setCurrentSingleGroup: function(groupID){
+        //User.getUsersGroups()
+        //User.getCurrentUser()
+        var groupColl = this.getgroupCollection()
+        var groupModels = STORE.data.groupCollection.models
+        console.log(STORE.data.groupCollection.models)
+        for(var i = 0; i < groupModels.length; i++){
+            console.log(groupModels[i])
+            console.log(groupModels[i].attributes._id)
+            if(groupModels[i].attributes._id === groupID){
+                var groupName = groupModels[i].attributes.name
+                var groupDescription = groupModels[i].attributes.description
+                var groupPurpose = groupModels[i].attributes.purpose
+                var groupUsers = groupModels[i].attributes.members.length
+                STORE._set({currentGroup: {name: groupName, description: groupDescription, purpose: groupPurpose, users: groupUsers}})
+            }
+        }
     },
 
     //returns all of the messages for a given group, takes group id
@@ -275,6 +295,16 @@ let ACTIONS = {
             method: 'GET',
             type: 'json',
             url: `api/users/${userId}/groups`
+
+        })
+
+    },
+    returnGroup: function(groupID){
+
+        return $.ajax({
+            method: 'GET',
+            type: 'json',
+            url: `api/groups`
 
         })
 

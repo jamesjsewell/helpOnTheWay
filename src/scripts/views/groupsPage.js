@@ -63,20 +63,25 @@ const Group = React.createClass({
 
 	_createAction: function(groupID) {
 
+		//ACTIONS.setCurrentGroup(groupID)
+
 		let userID = ACTIONS.getCurrentIDUser()
 		var addUser = ACTIONS.addUserToGroup(userID,groupID,this.props.groups)
 
-		console.log(this.props.groups)
-		var groupModels = this.props.groups.models
-		var groupName = ""
-		for(var i = 0; i < groupModels.length; i++){
-			console.log(groupModels[i])
-			if(groupModels[i].attributes._id === groupID){
-				groupName = groupModels[i].attributes.name
-				STORE._set({currentGroup: {name: groupName}})
-			}
-		}
-
+		// console.log(this.props.groups)
+		// var groupModels = this.props.groups.models
+		
+		// for(var i = 0; i < groupModels.length; i++){
+		// 	console.log(groupModels[i])
+		// 	if(groupModels[i].attributes._id === groupID){
+		// 		var groupName = groupModels[i].attributes.name
+		// 		var groupDescription = groupModels[i].attributes.description
+		// 		var groupPurpose = groupModels[i].attributes.purpose
+		// 		var groupUsers = groupModels[i].attributes.members.length
+		// 		STORE._set({currentGroup: {name: groupName, description: groupDescription, purpose: groupPurpose, users: groupUsers}})
+		// 	}
+		// }
+		ACTIONS.setCurrentSingleGroup(groupID)
 		location.hash=`group/${groupID}`
 		
 	},

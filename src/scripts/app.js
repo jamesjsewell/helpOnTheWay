@@ -30,6 +30,7 @@ var app = function() {
 		
 		},
 		showSingleGroup: function (groupId){
+			console.log('render single group page')
 			ReactDOM.render(<SingleGroupPage groupID={groupId} />, document.querySelector('.container'))
 		},
 		showAllGroups: function (){
